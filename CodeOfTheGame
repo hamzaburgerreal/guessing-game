@@ -1,39 +1,38 @@
-static void Main(string[] args) {
-
-        Console.Write("Enter a number: ");
-        double num1 = Convert.ToDouble(Console.ReadLine());
-        
-        Console.Write("Enter Operator: ");
-        string op = Console.ReadLine();
-
-        Console.Write("Enter another number: ");
-        double num2 = Convert.ToDouble(Console.ReadLine());
-
-        if (op == "+")
+/*
+Just copy every thing here.
+*/
+static void Main() {
+      string secretWord = "Kalb";
+      string guess = "";
+      int guessCount = 0;
+      int guessLimit = 3;
+      bool outOfGuesses = false;
+      
+      while(guess != secretWord && !outOfGuesses)
+      {
+          if (guessCount < guessLimit)
+          {
+              Console.Write("Enter guess: ");
+          guess = Console.ReadLine();
+          guessCount++;
+          }
+          else
+          {
+              outOfGuesses = true;
+          }
+          
+      }
+        if (outOfGuesses)
         {
-            Console.WriteLine(num1 + num2);
-        }
-        else if (op == "-")
-        {
-            Console.WriteLine(num1 - num2);
-        }
-        else if (op == "/")
-        {
-            Console.WriteLine(num1 / num2);
-        }
-        else if (op == "*")
-        {
-            Console.WriteLine(num1 * num2);
+        Console.WriteLine("You lose!");
         }
         else
         {
-            Console.WriteLine("Invalid operator");
+        Console.WriteLine("You win!");
         }
-
-
-
-
-        Console.ReadLine();
-    }
-
-}
+        
+      
+      
+     
+       Console.ReadLine();
+  }
